@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17E199" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Company" representedClassName=".Company" syncable="YES">
+        <attribute name="ceo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="coo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cto" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ctoPropulsion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="employees" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="founded" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="founder" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="launchSites" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="testSites" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="valuation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vehicles" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="headquarter" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Headquarter" syncable="YES"/>
+    </entity>
+    <entity name="Customer" representedClassName=".Customer" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Headquarter" representedClassName=".Headquarter" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="LaunchInfo" representedClassName=".LaunchInfo" syncable="YES">
+        <attribute name="details" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="flightNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="launchDateLocal" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="launchDateUnix" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="launchDateUTC" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="launchSuccess" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="launchYear" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="launchSite" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="LaunchSite" syncable="YES"/>
+        <relationship name="link" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Links" syncable="YES"/>
+        <relationship name="reuse" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Reuse" syncable="YES"/>
+        <relationship name="rocket" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="RocketInfo" syncable="YES"/>
+        <relationship name="telemetry" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Telemetry" syncable="YES"/>
+    </entity>
+    <entity name="LaunchSite" representedClassName=".LaunchSite" syncable="YES">
+        <attribute name="siteID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="siteName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="siteNameLong" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Links" representedClassName=".Links" syncable="YES">
+        <attribute name="articleLink" optional="YES" attributeType="URI" syncable="YES"/>
+        <attribute name="missionPatch" optional="YES" attributeType="URI" syncable="YES"/>
+        <attribute name="missionPatchSmall" optional="YES" attributeType="URI" syncable="YES"/>
+        <attribute name="presskit" optional="YES" attributeType="URI" syncable="YES"/>
+        <attribute name="redditCampaign" optional="YES" attributeType="URI" syncable="YES"/>
+        <attribute name="redditLaunch" optional="YES" attributeType="URI" syncable="YES"/>
+        <attribute name="redditMedia" optional="YES" attributeType="URI" syncable="YES"/>
+        <attribute name="redditRecovery" optional="YES" attributeType="URI" syncable="YES"/>
+        <attribute name="videoLink" optional="YES" attributeType="URI" syncable="YES"/>
+    </entity>
+    <entity name="Reuse" representedClassName=".Reuse" syncable="YES">
+        <attribute name="capsule" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="core" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="fairings" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="sideCore1" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="sideCore2" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="RocketCore" representedClassName=".RocketCore" syncable="YES">
+        <attribute name="block" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="coreSerial" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="flight" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="landingType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="landingVehicle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="landSuccess" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="reused" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="RocketFirstStage" representedClassName=".RocketFirstStage" syncable="YES">
+        <relationship name="cores" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="RocketCore" syncable="YES"/>
+    </entity>
+    <entity name="RocketInfo" representedClassName=".RocketInfo" syncable="YES">
+        <attribute name="rocketID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rocketName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rocketType" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="firstStage" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="RocketFirstStage" syncable="YES"/>
+        <relationship name="secondStage" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="RocketSecondStage" syncable="YES"/>
+    </entity>
+    <entity name="RocketPayload" representedClassName=".RocketPayload" syncable="YES">
+        <attribute name="orbit" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="payloadID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="payloadMassKG" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="payloadMassLBS" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="payloadType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reused" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="customers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Customer" syncable="YES"/>
+    </entity>
+    <entity name="RocketSecondStage" representedClassName=".RocketSecondStage" syncable="YES">
+        <relationship name="payloads" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="RocketPayload" syncable="YES"/>
+    </entity>
+    <entity name="Telemetry" representedClassName=".Telemetry" syncable="YES">
+        <attribute name="flightClub" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Customer" positionX="-18866" positionY="-7812" width="128" height="58"/>
+        <element name="LaunchInfo" positionX="-19674" positionY="-8253" width="128" height="223"/>
+        <element name="LaunchSite" positionX="-19575" positionY="-8514" width="128" height="88"/>
+        <element name="Links" positionX="-19494" positionY="-8406" width="128" height="178"/>
+        <element name="Reuse" positionX="-19379" positionY="-8202" width="128" height="118"/>
+        <element name="RocketCore" positionX="-19019" positionY="-8140" width="128" height="148"/>
+        <element name="RocketFirstStage" positionX="-19208" positionY="-8055" width="128" height="58"/>
+        <element name="RocketInfo" positionX="-19370" positionY="-8049" width="128" height="118"/>
+        <element name="RocketPayload" positionX="-19037" positionY="-7924" width="128" height="148"/>
+        <element name="RocketSecondStage" positionX="-19224" positionY="-7899" width="128" height="58"/>
+        <element name="Telemetry" positionX="-19530" positionY="-7938" width="128" height="58"/>
+        <element name="Company" positionX="-19683" positionY="-7833" width="128" height="253"/>
+        <element name="Headquarter" positionX="-19415" positionY="-7749" width="128" height="88"/>
+    </elements>
+</model>

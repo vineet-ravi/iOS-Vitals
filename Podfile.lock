@@ -1,0 +1,22 @@
+PODS:
+  - CocoaLumberjack/Default (3.4.2)
+  - CocoaLumberjack/Swift (3.4.2):
+    - CocoaLumberjack/Default
+  - SwiftyJSON (4.0.0)
+
+DEPENDENCIES:
+  - CocoaLumberjack/Swift (~> 3.4.1)
+  - SwiftyJSON (~> 4.0)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - CocoaLumberjack
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  CocoaLumberjack: db7cc9e464771f12054c22ff6947c5a58d43a0fd
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+
+PODFILE CHECKSUM: 0aa5974864ae0997af611bc01e857018b741e960
+
+COCOAPODS: 1.5.0
