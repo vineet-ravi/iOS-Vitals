@@ -10,3 +10,8 @@ This project uses following pods as static library :
 
 Other Information:
 1. `iOS deployment target - 11.0`
+
+This project can answer following questions in Swift 3:
+1. How to create a Core Data Stack?
+2. How to manage multiple Operations?
+3. How to create a reusable Networking Stack?
